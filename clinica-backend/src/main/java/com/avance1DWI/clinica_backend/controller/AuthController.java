@@ -2,6 +2,8 @@ package com.avance1DWI.clinica_backend.controller;
 
 import com.avance1DWI.clinica_backend.dto.*;
 import com.avance1DWI.clinica_backend.service.UsuarioService;
+import jakarta.validation.Valid;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,19 +18,19 @@ public class AuthController {
     }
 
     @PostMapping("/registro")
-    public ResponseEntity<?> registrar(@RequestBody RegisterRequest request) {
+    public ResponseEntity<?> registrar(@Valid @RequestBody RegisterRequest request) {
         try {
             return ResponseEntity.ok(usuarioService.registrar(request));
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
         try {
             return ResponseEntity.ok(usuarioService.login(request));
-        } catch (RuntimeException e) {
+        } catch (BadCredentialsException e) {
             return ResponseEntity.status(401).body(e.getMessage());
         }
     }

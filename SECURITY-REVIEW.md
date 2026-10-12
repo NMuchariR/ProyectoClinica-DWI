@@ -24,3 +24,12 @@
 - Desactivar `spring.jpa.show-sql` en producción y evitar registrar secretos o datos personales.
 - Revisar el almacenamiento del JWT en `localStorage`: una vulnerabilidad XSS podría permitir robarlo. Si se migra a cookies `HttpOnly`, `Secure` y `SameSite`, considerar también las protecciones CSRF correspondientes.
 - Añadir pruebas de autorización que verifiquen que un paciente no puede acceder a rutas administrativas y pruebas que comprueben que las contraseñas no aparecen en respuestas ni registros.
+
+## Cambios de mitigación en la rama de seguridad
+
+- Se retiraron las credenciales de base de datos y la clave JWT del archivo versionado; ahora se requieren variables de entorno.
+- El administrador inicial solo se crea si se proporcionan sus datos por entorno; se eliminaron las cuentas de prueba con contraseñas fijas.
+- Se desactivó el registro de SQL y se hizo configurable CORS por entorno.
+- Registro e inicio de sesión validan y limitan los datos recibidos en el backend. El frontend alinea los límites de registro.
+- No se encontraron consultas SQL construidas mediante concatenación en el backend. Las búsquedas usan métodos derivados de Spring Data JPA, que enlazan los valores como parámetros. Se añadieron pruebas para proteger ese comportamiento ante entradas tipo SQLi.
+- El JWT sigue en `localStorage` por decisión de alcance; debe considerarse el riesgo de robo del token ante XSS.

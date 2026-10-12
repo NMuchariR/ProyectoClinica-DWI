@@ -5,9 +5,11 @@ import com.avance1DWI.clinica_backend.entity.Usuario;
 import com.avance1DWI.clinica_backend.enums.Rol;
 import com.avance1DWI.clinica_backend.repository.UsuarioRepository;
 import com.avance1DWI.clinica_backend.security.JwtUtil;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -26,8 +28,12 @@ public class UsuarioService {
     }
 
     public AuthResponse registrar(RegisterRequest request) {
+        if (request.getPassword().getBytes(StandardCharsets.UTF_8).length > 72) {
+            throw new IllegalArgumentException("La contraseña no puede exceder 72 bytes UTF-8");
+        }
+
         if (usuarioRepository.existsByCorreo(request.getCorreo())) {
-            throw new RuntimeException("El correo ya está registrado");
+            throw new IllegalArgumentException("El correo ya está registrado");
         }
 
         Usuario nuevo = new Usuario(
@@ -45,11 +51,15 @@ public class UsuarioService {
     }
 
     public AuthResponse login(LoginRequest request) {
+        if (request.getPassword().getBytes(StandardCharsets.UTF_8).length > 72) {
+            throw new BadCredentialsException("Correo o contraseña incorrectos");
+        }
+
         Usuario usuario = usuarioRepository.findByCorreo(request.getCorreo())
-                .orElseThrow(() -> new RuntimeException("Correo o contraseña incorrectos"));
+                .orElseThrow(() -> new BadCredentialsException("Correo o contraseña incorrectos"));
 
         if (!passwordEncoder.matches(request.getPassword(), usuario.getPassword())) {
-            throw new RuntimeException("Correo o contraseña incorrectos");
+            throw new BadCredentialsException("Correo o contraseña incorrectos");
         }
 
         String token = jwtUtil.generarToken(usuario.getCorreo(), usuario.getRol().name());

@@ -2,3 +2,6 @@ node_modules/
 target/ 
 .idea/ 
 *.class 
+.env
+.env.*
+!.env.example

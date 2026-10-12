@@ -29,8 +29,8 @@ function Register() {
             return 'Ingresa un correo válido'
         }
 
-        if (form.password.length < 6) {
-            return 'La contraseña debe tener al menos 6 caracteres'
+        if (form.password.length < 12) {
+            return 'La contraseña debe tener al menos 12 caracteres'
         }
 
         if (form.password !== form.confirmar) {
@@ -80,20 +80,20 @@ function Register() {
 
                     <form className="form" onSubmit={manejarRegistro}>
                         <label>Nombre</label>
-                        <input value={form.nombre} onChange={(e) => cambiar('nombre', e.target.value)}/>
+                        <input maxLength={100} value={form.nombre} onChange={(e) => cambiar('nombre', e.target.value)}/>
 
                         <label>Apellido</label>
-                        <input value={form.apellido} onChange={(e) => cambiar('apellido', e.target.value)}/>
+                        <input maxLength={100} value={form.apellido} onChange={(e) => cambiar('apellido', e.target.value)}/>
 
                         <label>Correo</label>
-                        <input type="email" value={form.correo} onChange={(e) => cambiar('correo', e.target.value)}/>
+                        <input type="email" maxLength={254} value={form.correo} onChange={(e) => cambiar('correo', e.target.value)}/>
 
                         <label>Contraseña</label>
-                        <input type="password" value={form.password}
+                        <input type="password" minLength={12} maxLength={72} value={form.password}
                                onChange={(e) => cambiar('password', e.target.value)}/>
 
                         <label>Confirmar contraseña</label>
-                        <input type="password" value={form.confirmar}
+                        <input type="password" minLength={12} maxLength={72} value={form.confirmar}
                                onChange={(e) => cambiar('confirmar', e.target.value)}/>
 
                         {error && <p className="error">{error}</p>}
