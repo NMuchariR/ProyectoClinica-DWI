@@ -3,6 +3,9 @@ package com.avance1DWI.clinica_backend.entity;
 import com.avance1DWI.clinica_backend.enums.Rol;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -26,6 +29,9 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Rol rol;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Reserva> reservas = new ArrayList<>();
 
     public Usuario() {
     }
