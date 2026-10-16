@@ -1,0 +1,349 @@
+.preferencias-visuales {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1100;
+}
+
+.preferencias-boton {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    background: #B3283D;
+    color: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(46, 42, 38, 0.28);
+    cursor: pointer;
+    font-size: 29px;
+}
+
+.preferencias-boton:hover {
+    background: #8C1F30;
+}
+
+.preferencias-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    border: 0;
+    background: transparent;
+}
+
+.preferencias-panel {
+    position: absolute;
+    right: 0;
+    bottom: 66px;
+    width: min(290px, calc(100vw - 32px));
+    padding: 18px;
+    border: 1px solid #E0D6CE;
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: #2E2A26;
+    box-shadow: 0 6px 24px rgba(46, 42, 38, 0.2);
+}
+
+.preferencias-panel h2 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.preferencias-opcion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 0;
+    border-top: 1px solid #F1E4DC;
+    cursor: pointer;
+}
+
+.preferencias-opcion input {
+    width: 20px;
+    height: 20px;
+    accent-color: #B3283D;
+    cursor: pointer;
+}
+
+:root[data-modo-noche="true"] body {
+    background: #151719;
+    color: #ECEFF1;
+}
+
+:root[data-modo-noche="true"] .main,
+:root[data-modo-noche="true"] .paciente-inicio {
+    background: #151719;
+    color: #ECEFF1;
+}
+
+:root[data-modo-noche="true"] .box,
+:root[data-modo-noche="true"] .preferencias-panel {
+    background: #222629;
+    color: #ECEFF1;
+    border-color: #454C50;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-modo-noche="true"] .main .head h1,
+:root[data-modo-noche="true"] .calendario-navegacion h2,
+:root[data-modo-noche="true"] .calendario-detalle h2,
+:root[data-modo-noche="true"] .calendario-cita h3,
+:root[data-modo-noche="true"] .paciente-bienvenida h1,
+:root[data-modo-noche="true"] .paciente-proxima h2,
+:root[data-modo-noche="true"] .paciente-atajo h2,
+:root[data-modo-noche="true"] .paciente-historial h2,
+:root[data-modo-noche="true"] .paciente-indicador strong,
+:root[data-modo-noche="true"] .paciente-cita-info h3,
+:root[data-modo-noche="true"] .paciente-cita-info > strong,
+:root[data-modo-noche="true"] .reserva-datos h3,
+:root[data-modo-noche="true"] .reserva-confirmacion h2 {
+    color: #F4F5F6;
+}
+
+:root[data-modo-noche="true"] .campo label,
+:root[data-modo-noche="true"] .campo-label,
+:root[data-modo-noche="true"] .reserva-datos dd,
+:root[data-modo-noche="true"] .calendario-dia,
+:root[data-modo-noche="true"] .calendario-proxima,
+:root[data-modo-noche="true"] .admin-busqueda input,
+:root[data-modo-noche="true"] .campo input,
+:root[data-modo-noche="true"] .campo select,
+:root[data-modo-noche="true"] .campo textarea,
+:root[data-modo-noche="true"] input,
+:root[data-modo-noche="true"] select,
+:root[data-modo-noche="true"] textarea {
+    background-color: #191D20;
+    color: #F4F5F6;
+    border-color: #596166;
+}
+
+:root[data-modo-noche="true"] .login,
+:root[data-modo-noche="true"] .register,
+:root[data-modo-noche="true"] .login .main,
+:root[data-modo-noche="true"] .register .main {
+    background: #151719;
+    color: #ECEFF1;
+}
+
+:root[data-modo-noche="true"] .login .side {
+    background-image: linear-gradient(180deg, rgba(15, 17, 19, 0.55), rgba(15, 17, 19, 0.9)), url('../img/Loginimg.jpg');
+    background-color: #222629;
+    color: #F4F5F6;
+}
+
+:root[data-modo-noche="true"] .register .side {
+    background-image: linear-gradient(180deg, rgba(15, 17, 19, 0.55), rgba(15, 17, 19, 0.9)), url('../img/RegistroImg.jpg');
+    background-color: #222629;
+    color: #F4F5F6;
+}
+
+:root[data-modo-noche="true"] .login .form input,
+:root[data-modo-noche="true"] .register .form input {
+    background: #191D20;
+    color: #F4F5F6;
+    border-color: #596166;
+}
+
+:root[data-modo-noche="true"] .login .title,
+:root[data-modo-noche="true"] .register .title {
+    color: #F4F5F6;
+}
+
+:root[data-modo-noche="true"] .login .sub,
+:root[data-modo-noche="true"] .register .sub {
+    color: #C1C7CA;
+}
+
+:root[data-modo-noche="true"] .calendario-dia.seleccionado,
+:root[data-modo-noche="true"] .reserva-confirmacion-detalle,
+:root[data-modo-noche="true"] .reserva-nota,
+:root[data-modo-noche="true"] .reserva-paso,
+:root[data-modo-noche="true"] .paciente-fecha,
+:root[data-modo-noche="true"] .paciente-atajo {
+    background: #32252A;
+    color: #F4DDE1;
+}
+
+:root[data-modo-noche="true"] .btn-secundario,
+:root[data-modo-noche="true"] .paciente-sin-cita .btn-secundario {
+    background: #222629;
+    color: #FF9EAE;
+    border-color: #FF9EAE;
+}
+
+:root[data-modo-noche="true"] .reserva-datos,
+:root[data-modo-noche="true"] .calendario-cita,
+:root[data-modo-noche="true"] .calendario-proxima,
+:root[data-modo-noche="true"] .paciente-indicador,
+:root[data-modo-noche="true"] .paciente-proxima,
+:root[data-modo-noche="true"] .paciente-atajo,
+:root[data-modo-noche="true"] .paciente-historial,
+:root[data-modo-noche="true"] .preferencias-opcion {
+    border-color: #454C50;
+}
+
+:root[data-modo-noche="true"] th,
+:root[data-modo-noche="true"] td {
+    border-bottom-color: #454C50;
+}
+
+:root[data-modo-noche="true"] .reserva-hora {
+    background: #191D20;
+    color: #F4F5F6;
+    border-color: #596166;
+}
+
+:root[data-modo-noche="true"] .reserva-hora.seleccionada {
+    background: #B3283D;
+    border-color: #FF9EAE;
+}
+
+:root[data-modo-noche="true"] .barra-fondo {
+    background: #454C50;
+}
+
+:root[data-alto-contraste="true"] body,
+:root[data-alto-contraste="true"] .main,
+:root[data-alto-contraste="true"] .paciente-inicio {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .box,
+:root[data-alto-contraste="true"] .preferencias-panel,
+:root[data-alto-contraste="true"] .calendario-dia,
+:root[data-alto-contraste="true"] .calendario-proxima,
+:root[data-alto-contraste="true"] .campo input,
+:root[data-alto-contraste="true"] .campo select,
+:root[data-alto-contraste="true"] .campo textarea,
+:root[data-alto-contraste="true"] input,
+:root[data-alto-contraste="true"] select,
+:root[data-alto-contraste="true"] textarea {
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-shadow: none;
+}
+
+:root[data-alto-contraste="true"] h1,
+:root[data-alto-contraste="true"] h2,
+:root[data-alto-contraste="true"] h3,
+:root[data-alto-contraste="true"] p,
+:root[data-alto-contraste="true"] label,
+:root[data-alto-contraste="true"] span,
+:root[data-alto-contraste="true"] td,
+:root[data-alto-contraste="true"] th,
+:root[data-alto-contraste="true"] dt,
+:root[data-alto-contraste="true"] dd,
+:root[data-alto-contraste="true"] strong {
+    color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] a,
+:root[data-alto-contraste="true"] .titulo-form,
+:root[data-alto-contraste="true"] .reserva-etiqueta,
+:root[data-alto-contraste="true"] .card .big,
+:root[data-alto-contraste="true"] .barra-total {
+    color: #FFFF00;
+}
+
+:root[data-alto-contraste="true"] .btn,
+:root[data-alto-contraste="true"] .preferencias-boton,
+:root[data-alto-contraste="true"] .calendario-marca,
+:root[data-alto-contraste="true"] .reserva-hora.seleccionada {
+    background: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFF00;
+    box-shadow: none;
+}
+
+:root[data-alto-contraste="true"] .side {
+    background: #000000;
+    border-right: 2px solid #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .menu-enlace,
+:root[data-alto-contraste="true"] .menu-enlace.activo,
+:root[data-alto-contraste="true"] .btn-secundario {
+    background: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+}
+
+:root[data-alto-contraste="true"] .reserva-nota,
+:root[data-alto-contraste="true"] .reserva-paso,
+:root[data-alto-contraste="true"] .reserva-confirmacion-detalle,
+:root[data-alto-contraste="true"] .paciente-atajo,
+:root[data-alto-contraste="true"] .paciente-fecha,
+:root[data-alto-contraste="true"] .calendario-dia.seleccionado {
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFF00;
+}
+
+:root[data-alto-contraste="true"] .estado,
+:root[data-alto-contraste="true"] .paciente-estado {
+    background: #000000;
+    color: #FFFF00;
+    border: 1px solid #FFFF00;
+}
+
+:root[data-alto-contraste="true"] .preferencias-panel,
+:root[data-alto-contraste="true"] .preferencias-opcion {
+    border-color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .login,
+:root[data-alto-contraste="true"] .register,
+:root[data-alto-contraste="true"] .login .main,
+:root[data-alto-contraste="true"] .register .main {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .login .side {
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('../img/Loginimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .register .side {
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('../img/RegistroImg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .login .form input,
+:root[data-alto-contraste="true"] .register .form input {
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+:root[data-alto-contraste="true"] .preferencias-boton span {
+    color: #000000;
+}
+
+:root[data-alto-contraste="true"] .error,
+:root[data-alto-contraste="true"] .error-campo {
+    color: #FF8080;
+}
+
+:root[data-alto-contraste="true"] .exito,
+:root[data-alto-contraste="true"] .register .ok {
+    color: #00FF80;
+}
+
+@media (max-width: 768px) {
+    .preferencias-visuales {
+        right: 16px;
+        bottom: 16px;
+    }
+}

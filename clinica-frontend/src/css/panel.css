@@ -1,0 +1,37 @@
+.barras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.barra-fila {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.barra-nombre {
+    width: 180px;
+    font-size: 14px;
+}
+
+.barra-fondo {
+    flex: 1;
+    background: #F1E4DC;
+    border-radius: 8px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.barra-relleno {
+    height: 100%;
+    background: linear-gradient(90deg, #B3283D, #8C1F30);
+    border-radius: 8px;
+}
+
+.barra-total {
+    width: 30px;
+    text-align: right;
+    font-weight: bold;
+    color: #B3283D;
+}

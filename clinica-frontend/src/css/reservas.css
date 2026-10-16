@@ -1,0 +1,310 @@
+.estado.pendiente {
+    background: #FFF1D6;
+    color: #9A6A00;
+}
+
+.vacio {
+    color: #8A8078;
+    padding: 12px 0;
+}
+
+.campo select {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #FFFFFF;
+}
+
+.campo input[type="date"] {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.campo input[type="date"]:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.campo select:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.campo textarea {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.campo textarea:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.campo input[type="datetime-local"] {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.campo input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.reserva-panel {
+    margin-bottom: 24px;
+}
+
+.reserva-titulo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.reserva-titulo .titulo-form {
+    margin: 6px 0;
+}
+
+.reserva-titulo p,
+.reserva-ayuda {
+    color: #8A8078;
+    font-size: 14px;
+}
+
+.reserva-etiqueta {
+    color: #B3283D;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.reserva-paso {
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: #F8EBE5;
+    color: #8C1F30;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.campo-label {
+    color: #2E2A26;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.reserva-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reserva-hora {
+    min-width: 84px;
+    padding: 10px 14px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #594F49;
+    font: inherit;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+}
+
+.reserva-hora:hover {
+    border-color: #B3283D;
+}
+
+.reserva-hora.seleccionada {
+    border-color: #B3283D;
+    background: #B3283D;
+    color: #FFFFFF;
+}
+
+.reserva-nota {
+    border-radius: 8px;
+    background: #F8EBE5;
+    padding: 14px 16px;
+    color: #594F49;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.reserva-revision {
+    display: grid;
+    gap: 18px;
+}
+
+.reserva-datos {
+    border: 1px solid #F1E4DC;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.reserva-datos h3 {
+    margin-bottom: 16px;
+    color: #2E2A26;
+    font-size: 18px;
+}
+
+.reserva-datos dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 22px;
+}
+
+.reserva-datos dl > div {
+    min-width: 0;
+}
+
+.reserva-datos dt {
+    margin-bottom: 4px;
+    color: #8A8078;
+    font-size: 13px;
+}
+
+.reserva-datos dd {
+    overflow-wrap: anywhere;
+    color: #2E2A26;
+    font-size: 15px;
+}
+
+.reserva-datos .reserva-motivo {
+    grid-column: 1 / -1;
+}
+
+.reserva-acciones {
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.reserva-confirmacion {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #D5E8D8;
+    text-align: center;
+}
+
+.reserva-confirmacion-icono {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border-radius: 50%;
+    background: #E3F4E8;
+    color: #1F7A3E;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.reserva-confirmacion h2 {
+    color: #2E2A26;
+    font-size: 26px;
+}
+
+.reserva-confirmacion > p {
+    color: #8A8078;
+}
+
+.reserva-confirmacion-detalle {
+    display: grid;
+    width: min(100%, 560px);
+    gap: 10px;
+    margin: 8px 0;
+    padding: 18px;
+    border-radius: 10px;
+    background: #FBF3E7;
+    text-align: left;
+}
+
+.reserva-confirmacion .acciones {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reserva-historial {
+    margin-top: 24px;
+}
+
+.admin-citas-cabecera {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.admin-citas-cabecera .titulo-form {
+    margin-bottom: 6px;
+}
+
+.admin-citas-cabecera p,
+.admin-citas-cantidad {
+    color: #8A8078;
+    font-size: 13px;
+}
+
+.admin-busqueda {
+    width: min(100%, 340px);
+}
+
+.admin-busqueda input {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.admin-busqueda input:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.admin-citas-cantidad {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+    .reserva-titulo {
+        flex-direction: column;
+    }
+
+    .reserva-datos dl {
+        grid-template-columns: 1fr;
+    }
+
+    .reserva-datos .reserva-motivo {
+        grid-column: auto;
+    }
+
+    .reserva-acciones {
+        flex-direction: column-reverse;
+    }
+
+    .reserva-acciones .btn {
+        width: 100%;
+    }
+
+    .admin-citas-cabecera {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-busqueda {
+        width: 100%;
+    }
+}

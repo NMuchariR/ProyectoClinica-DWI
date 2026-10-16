@@ -1,0 +1,147 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .dash .side {
+        width: min(290px, 86vw);
+        padding: 72px 20px 24px;
+        transform: translateX(-105%);
+        visibility: hidden;
+        box-shadow: none;
+        transition: transform 0.25s ease, visibility 0s linear 0.25s, box-shadow 0.25s ease;
+    }
+
+    .dash .side.side-abierto {
+        transform: translateX(0);
+        visibility: visible;
+        box-shadow: 8px 0 28px rgba(46, 42, 38, 0.25);
+        transition-delay: 0s;
+    }
+
+    .menu-overlay {
+        display: block;
+    }
+
+    .dash .main {
+        margin-left: 0;
+        min-width: 0;
+        padding: 76px 20px 24px;
+    }
+
+    .dash table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .main .head h1 {
+        font-size: 22px;
+    }
+
+    .form-servicio {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-nombre {
+        width: 110px;
+        font-size: 13px;
+    }
+
+    .login,
+    .register {
+        flex-direction: column;
+    }
+
+    .login .side,
+    .register .side {
+        flex: none;
+        width: 100%;
+        padding: 28px 20px;
+    }
+
+    .login .icon {
+        display: none;
+    }
+
+    .login .logo,
+    .register .logo {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .login .side p,
+    .register .side p {
+        max-width: none;
+        font-size: 14px;
+    }
+
+    .login .main,
+    .register .main {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+        padding: 24px 16px;
+    }
+
+    .login .card,
+    .register .card {
+        width: 100%;
+        max-width: 440px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        padding: 16px;
+    }
+
+    .appt {
+        padding: 24px 16px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .login .side,
+    .register .side {
+        padding: 22px 16px;
+    }
+
+    .login .main,
+    .register .main {
+        padding: 20px 12px;
+    }
+
+    .login .title,
+    .register .title {
+        font-size: 22px;
+    }
+}

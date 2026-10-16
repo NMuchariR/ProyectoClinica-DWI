@@ -1,49 +1,91 @@
 .dash {
-    display: flex;
+    display: block;
     min-height: 100vh;
 }
 
-.side {
-    width: 220px;
+.dash .side {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1001;
+    width: 260px;
+    overflow-y: auto;
     background: linear-gradient(180deg, #B3283D, #8C1F30);
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    padding: 24px 20px;
+    padding: 72px 20px 24px;
+    box-shadow: 8px 0 28px rgba(46, 42, 38, 0.18);
 }
 
-.side .logo {
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1003;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 10px;
+    background: #B3283D;
+    color: #FFFFFF;
+    box-shadow: 0 3px 12px rgba(46, 42, 38, 0.2);
+    cursor: pointer;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.menu-toggle:hover {
+    background: #8C1F30;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    border: 0;
+    background: rgba(32, 27, 25, 0.38);
+    cursor: pointer;
+}
+
+.dash .side .logo {
     font-family: Georgia, serif;
     font-size: 20px;
     margin-bottom: 30px;
 }
 
-.side .user {
+.dash .side .user {
     margin-bottom: auto;
 }
 
-.side .user .name {
+.dash .side .user .name {
     font-weight: bold;
 }
 
-.side .user .role {
+.dash .side .user .role {
     font-size: 13px;
     opacity: 0.85;
 }
 
-.side .btn {
+.dash .side .btn {
     background: #FFFFFF;
     color: #B3283D;
     margin-top: 20px;
 }
 
-.side .btn:hover {
+.dash .side .btn:hover {
     background: #F1E4DC;
 }
 
 .main {
     flex: 1;
     padding: 40px;
+}
+
+.dash .main {
+    margin-left: 260px;
+    padding-top: 76px;
 }
 
 .main .head {
@@ -87,4 +129,37 @@ th, td {
 th {
     color: #8A8078;
     font-size: 13px;
+}
+
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 30px;
+}
+
+.menu-enlace {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    opacity: 0.85;
+}
+
+.menu-enlace:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.menu-enlace.activo {
+    background: rgba(255, 255, 255, 0.25);
+    font-weight: bold;
+    opacity: 1;
+}
+
+.dash .side a.logo {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 }

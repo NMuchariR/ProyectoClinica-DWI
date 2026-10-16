@@ -1,16 +1,246 @@
-.appt {
-    border: 2px dashed #B3283D;
-    text-align: center;
-    padding: 40px;
+.paciente-inicio {
+    background: #FBF3E7;
 }
 
-.appt h2 {
-    font-size: 22px;
-    color: #B3283D;
-    margin-bottom: 8px;
+.paciente-bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
-.appt p {
+.paciente-bienvenida h1 {
+    margin: 5px 0;
+    color: #2E2A26;
+}
+
+.paciente-bienvenida > div > p:last-child,
+.paciente-cita-info p,
+.paciente-atajo > p:not(.paciente-etiqueta) {
     color: #8A8078;
+}
+
+.paciente-etiqueta {
+    color: #B3283D;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.paciente-inicio .btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #B3283D;
+}
+
+.paciente-inicio .btn:hover {
+    background: #8C1F30;
+}
+
+.paciente-resumen {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
     margin-bottom: 20px;
+}
+
+.paciente-indicador {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #F1E4DC;
+    box-shadow: none;
+}
+
+.paciente-indicador p,
+.paciente-indicador span {
+    color: #8A8078;
+    font-size: 13px;
+}
+
+.paciente-indicador strong {
+    color: #2E2A26;
+    font-size: 30px;
+}
+
+.paciente-indicador .paciente-correo {
+    overflow-wrap: anywhere;
+    font-size: 17px;
+}
+
+.paciente-destacado {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr);
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.paciente-proxima,
+.paciente-atajo,
+.paciente-historial {
+    border: 1px solid #F1E4DC;
+    box-shadow: none;
+}
+
+.paciente-proxima h2,
+.paciente-atajo h2,
+.paciente-historial h2 {
+    color: #2E2A26;
+    font-size: 20px;
+}
+
+.paciente-cita-detalle {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.paciente-fecha {
+    display: flex;
+    width: 78px;
+    min-width: 78px;
+    min-height: 88px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 12px;
+    background: #F8EBE5;
+    color: #B3283D;
+    font-size: 12px;
+}
+
+.paciente-fecha strong {
+    font-size: 26px;
+}
+
+.paciente-cita-info h3 {
+    margin-bottom: 6px;
+    color: #2E2A26;
+    font-size: 18px;
+}
+
+.paciente-cita-info > strong {
+    display: inline-block;
+    margin-top: 8px;
+    color: #2E2A26;
+    font-size: 14px;
+}
+
+.paciente-cita-info .paciente-motivo {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.paciente-sin-cita {
+    display: grid;
+    justify-items: start;
+    gap: 14px;
+    margin-top: 16px;
+    color: #8A8078;
+}
+
+.paciente-sin-cita .btn-secundario {
+    border: 1px solid #F1E4DC;
+    background: #FFFFFF;
+    color: #B3283D;
+}
+
+.paciente-atajo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    background: #F8EBE5;
+}
+
+.paciente-atajo h2 {
+    font-size: 22px;
+}
+
+.paciente-atajo .btn {
+    text-align: center;
+}
+
+.paciente-seccion-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.paciente-seccion-cabecera a {
+    color: #B3283D;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.paciente-lista-reservas {
+    display: flex;
+    flex-direction: column;
+}
+
+.paciente-fila-reserva {
+    display: grid;
+    grid-template-columns: minmax(150px, .8fr) minmax(180px, 1.5fr) auto;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid #F1E4DC;
+    color: #594F49;
+    font-size: 14px;
+}
+
+.paciente-estado {
+    justify-self: end;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #F1E4DC;
+    color: #594F49;
+    font-size: 12px;
+}
+
+.paciente-estado.pendiente {
+    background: #FFF1D6;
+    color: #9A6A00;
+}
+
+.paciente-estado.cancelada {
+    background: #FBE9E7;
+    color: #A8443C;
+}
+
+@media (max-width: 900px) {
+    .paciente-destacado {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .paciente-bienvenida {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paciente-resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .paciente-fila-reserva {
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+    }
+
+    .paciente-fila-reserva > span:nth-child(2) {
+        grid-row: 2;
+    }
+
+    .paciente-estado {
+        grid-column: 2;
+        grid-row: 1;
+    }
 }

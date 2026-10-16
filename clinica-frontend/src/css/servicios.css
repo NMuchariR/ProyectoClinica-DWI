@@ -1,0 +1,113 @@
+.estado {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estado.activo {
+    background: #E3F4E8;
+    color: #1F7A3E;
+}
+
+.estado.inactivo {
+    background: #F1E4DC;
+    color: #8A8078;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+}
+
+
+.titulo-form {
+    font-size: 20px;
+    color: #B3283D;
+    margin-bottom: 16px;
+}
+
+.form-servicio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-ancho {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-size: 14px;
+    color: #2E2A26;
+}
+
+.campo input[type="text"],
+.campo input[type="number"],
+.campo textarea {
+    padding: 10px 12px;
+    border: 1px solid #E0D6CE;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #B3283D;
+}
+
+.campo-check {
+    justify-content: flex-end;
+}
+
+.campo-check label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-campo {
+    color: #B3283D;
+    font-size: 13px;
+}
+
+.acciones {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-secundario {
+    background: #FFFFFF;
+    color: #B3283D;
+    border: 1px solid #B3283D;
+}
+
+.btn-secundario:hover {
+    background: #F1E4DC;
+}
+
+.btn-chico {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.celda-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.exito {
+    color: #1F7A3E;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+
+

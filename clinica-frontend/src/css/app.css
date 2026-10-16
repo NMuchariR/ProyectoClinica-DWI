@@ -46,3 +46,10 @@ h1, h2, h3 {
     padding: 24px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
+
+.error-campo {
+    display: block;
+    color: #B3283D;
+    font-size: 13px;
+    margin-top: 6px;
+}

@@ -1,0 +1,234 @@
+.calendario-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.calendario-cabecera p {
+    margin-top: 6px;
+    color: #8A8078;
+}
+
+.calendario-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    gap: 20px;
+}
+
+.calendario-mes,
+.calendario-detalle,
+.calendario-proximas {
+    border: 1px solid #F1E4DC;
+    box-shadow: none;
+}
+
+.calendario-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.calendario-navegacion h2,
+.calendario-detalle h2 {
+    color: #2E2A26;
+    text-transform: capitalize;
+}
+
+.calendario-flecha {
+    min-width: 38px;
+    padding: 6px 12px;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.calendario-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.calendario-dia-semana {
+    padding: 8px 0;
+    color: #8A8078;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.calendario-vacio {
+    min-height: 52px;
+}
+
+.calendario-dia {
+    position: relative;
+    display: flex;
+    min-height: 52px;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #2E2A26;
+    padding: 8px 5px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.calendario-dia:hover {
+    border-color: #DDB8B0;
+}
+
+.calendario-dia.hoy > span:first-child {
+    color: #B3283D;
+    font-weight: 700;
+}
+
+.calendario-dia.seleccionado {
+    border-color: #B3283D;
+    background: #F8EBE5;
+}
+
+.calendario-marca {
+    position: absolute;
+    right: 5px;
+    bottom: 4px;
+    display: grid;
+    min-width: 17px;
+    height: 17px;
+    place-items: center;
+    border-radius: 999px;
+    background: #B3283D;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+.calendario-marca.cancelada {
+    background: #D5CEC9;
+    color: #594F49;
+}
+
+.calendario-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+    color: #8A8078;
+    font-size: 12px;
+}
+
+.calendario-leyenda span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.calendario-leyenda i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #B3283D;
+}
+
+.calendario-leyenda i.cancelada {
+    background: #D5CEC9;
+}
+
+.calendario-detalle h2 {
+    margin: 6px 0 18px;
+    font-size: 20px;
+}
+
+.calendario-lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendario-cita {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid #F1E4DC;
+}
+
+.calendario-cita > strong {
+    color: #B3283D;
+}
+
+.calendario-cita h3 {
+    margin-bottom: 4px;
+    color: #2E2A26;
+    font-size: 16px;
+}
+
+.calendario-cita p {
+    margin: 3px 0;
+    color: #8A8078;
+    font-size: 13px;
+}
+
+.calendario-cita .estado {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.calendario-proximas {
+    margin-top: 20px;
+}
+
+.calendario-lista-proximas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+}
+
+.calendario-proxima {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    border: 1px solid #F1E4DC;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 14px;
+    color: #2E2A26;
+    text-align: left;
+    cursor: pointer;
+}
+
+.calendario-proxima:hover {
+    border-color: #B3283D;
+}
+
+.calendario-proxima span {
+    color: #8A8078;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+    .calendario-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendario-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .calendario-dia {
+        min-height: 42px;
+    }
+
+    .calendario-vacio {
+        min-height: 42px;
+    }
+
+    .calendario-leyenda {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
